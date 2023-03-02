@@ -1,0 +1,270 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700");
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+video{
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+}
+
+button {
+    background: inherit;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    overflow: visible;
+    cursor: pointer
+}
+
+/* header 시작 */
+header {
+    width: 100%;
+    height: 60px;
+    background-color: #353535;
+    font-size: 12px;
+    position: fixed;
+    z-index: 1;
+}
+
+header a {
+    color: #D9D9D9;
+}
+
+.header_bg {
+    width: 100%;
+    height: 380px;
+    background-color: #2c2c2c;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+}
+.header_bg.active{
+    opacity: 0.9;
+    visibility: visible;
+}
+.header_inner {
+    max-width: 1320px;
+    padding: 0 20px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    width: 28px;
+}
+
+.login {
+    display: flex;
+}
+
+.login ul li:nth-child(2) {
+    padding: 0 7px;
+}
+
+.login a {
+    font-family: 'Noto Sans KR', 'sans-serif';
+    font-weight: lighter;
+}
+
+.login>ul {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+nav .gnb {
+    display: flex;
+    justify-content: center;
+}
+
+nav .gnb > li {
+    padding: 0 10px;
+    line-height: 60px;
+    width: 60px;
+    text-align: center;;
+    font-family: "Roboto",'sans-serif';
+    transition: 0.5s;
+}
+nav .gnb > li > a:hover{
+    font-weight: bold;
+}
+nav .gnb > li::after {
+    content: '';
+    display: block;
+    position: relative;
+    bottom: 20px;
+    width: 0%;
+    height: 2px;
+    background-color: #FFCE00;
+    transition: 0.5s;
+}
+.Depth2 {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    background-color: #2c2c2c;
+}
+.Depth2.on{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.Depth_inner {
+    display: flex;
+    width: 100%;
+    max-width: 1320px;
+    height: auto;
+    padding: 50px;
+    margin: 0 auto;
+}
+.Depth_inner ul > li {
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+}
+
+.Depth_inner ul>li>a {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: -0.25%;
+}
+
+.Depth_inner ul .tit {
+    font-size: 12px;
+    color: #ADADAD;
+}
+
+.Depth_inner ul {
+    margin: 0 20px;
+}
+
+.listbtn {
+    padding: 0 10px;
+}
+
+.listbtn .line {
+    display: block;
+    width: 14px;
+    height: 2px;
+    background: #D9D9D9;
+}
+
+.listbtn .middel {
+    margin: 3px 0;
+}
+
+/* main 시작 */
+.main_video{
+    width: 100%;
+    height: 100%;
+    max-height: 900px;
+    overflow: hidden;
+    position: relative;
+}
+.fllter{
+    width: 100%;
+    height: 100%;
+    max-height: 900px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #000;
+    opacity: 0.3;
+}
+.text_box{
+    width: 100%;
+    max-width: 1320px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    vertical-align:middle
+}
+.text_wrap{
+    position: relative;
+    width: 100%;
+    max-width: 1320px;
+    height: 300px;
+}
+.text_positon{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.vis_tit{
+    font-size: 48px;
+    font-family: "Roboto",'sans-serif';
+    color: #F0F0F0;
+    font-weight: 700;
+}
+.price{
+    font-size: 20px;
+    font-family: 'Noto Sans KR', 'sans-serif';
+    color:#959595;
+    font-weight: normal;
+    letter-spacing: -0.25px;
+    padding: 10px 0;
+}
+.btn ul{
+    display: flex;
+}
+.btn ul li a{
+    color: #F0F0F0;
+}
+/* footer 시작 */
