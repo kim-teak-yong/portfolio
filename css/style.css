@@ -130,16 +130,15 @@ nav .gnb {
     justify-content: center;
 }
 
-nav .gnb>li {
+nav .gnb > li {
     padding: 0 10px;
     line-height: 60px;
     text-align: center;
-    ;
     font-family: "Roboto", 'sans-serif';
     display: inline-block;
 }
 
-nav .gnb>li>a:hover {
+nav .gnb > li:hover > a{
     font-weight: bold;
     transition: 0.5s;
 }
