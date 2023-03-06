@@ -42,7 +42,7 @@
     //     }
     // });
 
-    //main video width + height 비율조절
+    // main video width + height 비율조절
     const changeHandler = () => {
         console.log(window.innerHeight);
         document.querySelector("video").style.height = String(window.innerHeight) + "px";

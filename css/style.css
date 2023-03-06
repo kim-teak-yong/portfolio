@@ -30,16 +30,30 @@ a:hover {
 }
 
 img {
+    vertical-align: top;
     width: 100%;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
 }
-body{
+
+body {
     font-family: 'Noto Sans KR', 'sans-serif';
     letter-spacing: -0.25px;
+    height: 10000px;
 }
+
 video {
     width: 100%;
-    height: auto;
-    object-fit: fill;
+    height: 100%;
+    object-fit: cover;
 }
 
 button {
@@ -51,7 +65,8 @@ button {
     overflow: visible;
     cursor: pointer
 }
-.blur{
+
+.blur {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
@@ -59,22 +74,32 @@ button {
     opacity: 0;
     visibility: hidden;
     top: 0;
-    z-index:1;
+    z-index: 2;
     backdrop-filter: blur(3px);
     transition: 0.5s;
 }
-.blur.on{
+
+.blur.on {
     opacity: 1;
     visibility: visible;
     transition: 0.5s;
 }
+
 /* header 시작 */
 header {
     width: 100%;
     background-color: #222;
     font-size: 12px;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
+}
+
+.inner {
+    max-width: 1320px;
+    padding: 0 20px;
+    margin: 0 auto;
+    overflow: visible;
+    position: relative;
 }
 
 header a {
@@ -130,7 +155,7 @@ nav .gnb {
     justify-content: center;
 }
 
-nav .gnb > li {
+nav .gnb>li {
     padding: 0 10px;
     line-height: 60px;
     text-align: center;
@@ -138,16 +163,11 @@ nav .gnb > li {
     display: inline-block;
 }
 
-nav .gnb > li:hover > a{
-    font-weight: bold;
-    transition: 0.5s;
-}
-
 nav .gnb>li::after {
     content: '';
     display: block;
     position: relative;
-    bottom: 20px;
+    bottom: 15px;
     width: 0%;
     height: 2px;
     background-color: #FFCE00;
@@ -156,7 +176,7 @@ nav .gnb>li::after {
     transform: translateX(-50%);
 }
 
-nav .gnb > li:hover:after {
+nav .gnb>li:hover:after {
     width: 100%;
 }
 
@@ -210,8 +230,10 @@ nav .gnb > li:hover:after {
 .listbtn {
     padding: 0 10px;
 }
+
 .listbtn.on {
     opacity: 0;
+    visibility: hidden;
     transition: 0.5s;
 }
 
@@ -226,44 +248,50 @@ nav .gnb > li:hover:after {
     margin: 3px 0;
 }
 
-.full_meun{
+.full_meun {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, #2a2a2a, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    background: linear-gradient(to bottom, #2a2a2a, #000000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     position: fixed;
     top: 0;
     visibility: hidden;
-    right:0;
+    right: 0;
     transform: translateX(100%);
-    z-index: 10;
     transition: 0.5s;
     opacity: 0;
 }
-.full_meun.on{
+
+.full_meun.on {
     transform: translateX(0);
     visibility: visible;
     transition: 0.5s;
     opacity: 1;
+    z-index: 10;
 }
-.full_inner{
+
+.full_inner {
     width: 80%;
     height: 100%;
     margin: 0 auto;
     position: relative;
 }
-.full_list{
+
+.full_list {
     width: 100%;
     display: flex;
     position: absolute;
     left: 68%;
     top: 50%;
-    transform: translate(-60%,-50%);
-    
+    transform: translate(-60%, -50%);
+
 }
-.list{
+
+.list {
     width: calc(100% / 3);
 }
-.list .list-tit{
+
+.list .list-tit {
     font-size: 20px;
     padding: 20px 0;
     position: relative;
@@ -272,7 +300,8 @@ nav .gnb > li:hover:after {
     font-family: none;
     font-weight: 300;
 }
-.list .list-tit:after{
+
+.list .list-tit:after {
     content: '';
     display: block;
     width: 100%;
@@ -281,59 +310,69 @@ nav .gnb > li:hover:after {
     position: absolute;
     bottom: 0;
 }
-.list > ul {
+
+.list>ul {
     margin-top: 10px;
 }
-.list > ul > li{
+
+.list>ul>li {
     padding: 10px 0;
     position: relative;
     font-family: none;
     letter-spacing: -0.25px;
 }
-.list > ul > li:after{
+
+.list>ul>li>a:after {
     content: '';
-    display: block;
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
+    left: 0;
     width: 0%;
     height: 2px;
     background-color: #FFCE00;
     transition: 0.7s ease-in-out;
 }
-.list > ul > li:hover::after{
-    width: 50%;
+
+.list>ul>li>a:hover::after {
+    width: 100%;
     transition: 0.7s ease-in-out;
 }
-.list > ul > li > a{
+
+.list>ul>li>a {
     font-size: 16px;
-    color:  #D9D9D9;
+    color: #D9D9D9;
+    display: inline-block;
+    position: relative;
 }
 
-.full_inner .top{
+.full_inner .top {
     position: absolute;
     right: 12%;
     top: 18%;
 }
-.close{
-    color:#D9D9D9;
+
+.close {
+    color: #D9D9D9;
     font-size: 24px;
 }
 
-.copyrigth{
+.copyrigth {
     display: block;
     position: absolute;
     bottom: 14%;
     left: 50%;
     transform: translateX(-50%);
-    color:  #D9D9D9;
+    color: #D9D9D9;
     font-weight: 700;
     font-family: none;
 }
+
 /* main 시작 */
+/* main video 시작*/
 .main_video {
     width: 100%;
     height: 100%;
-    max-height: 900px;
+    max-height: 800px;
     overflow: hidden;
     position: relative;
 }
@@ -341,13 +380,12 @@ nav .gnb > li:hover:after {
 .fllter {
     width: 100%;
     height: 100%;
-    max-height: 900px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #000;
-    opacity: 0.3;
+    opacity: 0.6;
 }
 
 .text_box {
@@ -375,20 +413,39 @@ nav .gnb > li:hover:after {
     transform: translate(-50%, -50%);
 }
 
-.vis_tit {
+.vis_tit,
+.toptext {
     font-size: 48px;
     font-family: "Roboto", 'sans-serif';
     color: #F0F0F0;
     font-weight: 700;
 }
 
+.btn {
+    font-family: 'Noto Sans KR', 'sans-serif';
+}
+
+.toptext {
+    color: #262626;
+    letter-spacing: -2.25px;
+}
+
 .price {
-    font-size: 18px;
+    font-size: 22px;
     font-family: 'Noto Sans KR', 'sans-serif';
     color: #959595;
     font-weight: 100;
     letter-spacing: -0.25px;
-    padding: 15px 0;
+    padding: 12px 0 18px 0;
+    display: block;
+}
+
+.swiper-text>.price {
+    color: #262626;
+}
+
+.swiper-text>.btn>ul>li>a {
+    color: #262626;
 }
 
 .btn ul li {
@@ -418,10 +475,147 @@ nav .gnb > li:hover:after {
     color: #F0F0F0;
     display: inline-flex;
     padding: 0 5px;
+    font-size: 20px;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .btn ul li .arrow {
-    font-size: 18px;
-    line-height: 19px;
+    font-size: 23px;
+    line-height: 18px;
 }
+
+/* boxster 시작 */
+.Boxster {
+    padding: 54px 0 0 0;
+    overflow: hidden;
+    position: relative;
+    background: rgb(240, 240, 240);
+}
+
+.swiper-slide {
+    padding-top: 120px;
+}
+
+.swiper-text {
+    text-align: center;
+}
+
+.swiper-img {
+    text-align: center;
+    position: relative;
+    padding-left: 20px;
+}
+
+.sp-text {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.sp-text ul {
+    padding: 0 20px;
+    text-align: center;
+}
+
+.sp-text ul li {
+    font-size: 16px;
+    font-family: 'Noto Sans', sans-serif;
+    color: #262626;
+}
+
+.sp-text .spac_tit {
+    font-size: 32px;
+    font-weight: 800;
+    font-family: 'Noto Sans', sans-serif;
+    margin-bottom: 5px;
+    color: #262626;
+}
+
+.bottom {
+    margin: 0 auto;
+    display: block;
+    padding: 20px 0 80px 0;
+}
+
+.bottom>p {
+    font-size: 14px;
+    letter-spacing: -0.25px;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 3px 0;
+}
+
+/* //model 시작 */
+.model_list {
+    padding: 20px;
+}
+
+.item_warppy {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 50%);
+    grid-column-gap: 20px;
+}
+
+.item_warppy>.item {
+    padding-bottom: 20px;
+}
+
+.item {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.item>.text_positon {
+    top: 30%;
+    z-index: 1;
+}
+
+.item_tit {
+    color: #D9D9D9;
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.list_postion {
+    position: absolute;
+    left: 10%;
+    top: 15%;
+}
+
+.list02 .list_postion>.item_tit,
+.list02 .list_postion>.vis_tit,
+.list02 .list_postion>.price,
+.list02 .list_postion>.btn > ul > li > a {
+    color: #262626;
+}
+.item .list_postion>.btn > ul > li::after{
+    display: none;
+}
+.macan {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.macan>.fllter {
+    opacity: 0.3;
+}
+
+.item>.list01 {
+    background: url(../imges/그룹\ 75.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 /* footer 시작 */
