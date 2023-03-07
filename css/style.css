@@ -262,6 +262,7 @@ nav .gnb>li:hover:after {
     transform: translateX(100%);
     transition: 0.5s;
     opacity: 0;
+    z-index: 10;
 }
 
 .full_meun.on {
@@ -289,11 +290,11 @@ nav .gnb>li:hover:after {
 
 }
 
-.list {
+.full_item_list {
     width: calc(100% / 3);
 }
 
-.list .list-tit {
+.full_item_list .list-tit {
     font-size: 20px;
     padding: 20px 0;
     position: relative;
@@ -303,7 +304,7 @@ nav .gnb>li:hover:after {
     font-weight: 300;
 }
 
-.list .list-tit:after {
+.full_item_list .list-tit:after {
     content: '';
     display: block;
     width: 100%;
@@ -313,18 +314,18 @@ nav .gnb>li:hover:after {
     bottom: 0;
 }
 
-.list>ul {
+.full_item_list>ul {
     margin-top: 10px;
 }
 
-.list>ul>li {
+.full_item_list>ul>li {
     padding: 10px 0;
     position: relative;
     font-family: none;
     letter-spacing: -0.25px;
 }
 
-.list>ul>li>a:after {
+.full_item_list>ul>li>a:after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -335,12 +336,12 @@ nav .gnb>li:hover:after {
     transition: 0.7s ease-in-out;
 }
 
-.list>ul>li>a:hover::after {
+.full_item_list>ul>li>a:hover::after {
     width: 100%;
     transition: 0.7s ease-in-out;
 }
 
-.list>ul>li>a {
+.full_item_list>ul>li>a {
     font-size: 16px;
     color: #D9D9D9;
     display: inline-block;
@@ -577,7 +578,7 @@ nav .gnb>li:hover:after {
     transition: 0.5s;
 }
 .item:hover{
-    box-shadow: 2px 2px 15px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 4px 12px  rgba(0, 0, 0, 0.5);
 }
 .item>.text_positon {
     top: 30%;
@@ -653,6 +654,9 @@ nav .gnb>li:hover:after {
 }
 
 /* footer 시작 */
+.footer{
+    width: 100%;
+}
 .Top_footer_wrap{
     width: 100%;
     background-color: #353535;
@@ -688,11 +692,11 @@ nav .gnb>li:hover:after {
 .bot_footer_wrap{
     background: #2C2C2C;
     padding-top: 100px;
-    height: 620px;
+    padding-bottom: 30px;
 }
 .Global{
     display: flex;
-    padding: 20px 0 35px 0;
+    padding: 24px 0 35px 0;
 }
 .Global_tit{
     color: #fff;
@@ -702,8 +706,9 @@ nav .gnb>li:hover:after {
 form{
     padding: 0 20px 0 0;
 }
-select{
-    width: 400px;
+/* select{
+    width: 100%;
+    max-width: 400px;
     height: 60px;
     outline: none;
     background-color: #353535;
@@ -717,7 +722,7 @@ select{
     background-repeat: no-repeat;
     background-position: center right 20px;
     background-size: 14px;
-}
+} */
 .add{
     padding: 50px 0 30px 0;
     border-top: 1px solid #646464;

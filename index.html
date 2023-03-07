@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/Swiper_custom.css">
+    <link rel="stylesheet" href="css/select.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+
 
 <body>
     <div class="blur"></div>
@@ -24,7 +27,7 @@
                 <button class="close material-icons">close</button>
             </div>
             <div class="full_list">
-                <div class="list">
+                <div class="full_item_list">
                     <p class="list-tit">서비스</p>
                     <ul>
                         <li><a href="#">E-모빌리티 & E-퍼포먼스</a></li>
@@ -36,7 +39,7 @@
                         <li><a href="#">포르쉐 클래식</a></li>
                     </ul>
                 </div>
-                <div class="list">
+                <div class="full_item_list">
                     <p class="list-tit">익스피리언스</p>
                     <ul>
                         <li><a href="#">모터스포츠</a></li>
@@ -49,7 +52,7 @@
                         <li><a href="#">포르쉐 박물관</a></li>
                     </ul>
                 </div>
-                <div class="list">
+                <div class="full_item_list">
                     <p class="list-tit"> 포르쉐에 관하여</p>
                     <ul>
                         <li><a href="#">포르쉐 기업 정보</a></li>
@@ -574,21 +577,17 @@
                 <div class="inner">
                     <div class="Global_tit">국가 / 지역변경 :</div>
                     <div class="Global">
-                        <form>
-                            <select name="nation" class="nation">
+                            <select name="nation" class="wide nation">
                                 <option value="" selected>Korea</option>
                                 <option value="">North America</option>
                                 <option value="">Latin America</option>
                                 <option value="">Asia</option>
                             </select>
-                        </form>
-                        <form class="language">
-                            <select name="nation">
+                            <select name="nation" class="wide">
                                 <option value="" selected>국가를 선택해주세요</option>
                                 <option value="">Latin America</option>
                                 <option value="">Asia</option>
                             </select>
-                        </form>
                     </div>
                     <div class="add">
                         <span>포르쉐 고객센터 080-8100-911</span>
@@ -597,8 +596,11 @@
                             <p>※ 본 웹사이트에 기재된 내용은 사전에 예고 없이 변경될 수 있으므로 실제 차량과 다를 수 있습니다.</p>
                             <p>※ 차량 이미지는 실제 모델과 다를 수 있으며, 국내 적용 사양 및 구성에 따라 차이가 있을 수 있습니다.</p>
                             <p>※ 국내 출시 이전 차량의 경우 국내 공인 연비 정보 및 타이어 에너지소비효율 정보가 존재하지 않을 수 있습니다.</p>
-                            <p>※ 개별소비세 인하 관련 공지사항<br/><span class="pl">포르쉐 코리아는 정부의 일시적 개별소비세 인하 정책에 따라 적용 대상 차량에 대해 개별소비세 감면 혜택을 적용합니다.</span><br/><span class="pl">자세한 사항은 포르쉐 센터를 통하여 문의하시기 바랍니다.</span></p>
-                            <p>※본 페이지에 기재된 차량 가격은 권장소비자가격(MSRP)으로, 선택 사양, 취득세, 운송료 및 기타 핸들링에 대한 비용은 포함하지 않으며 실제 판매 가격과 상이할 수 있습니다.
+                            <p>※ 개별소비세 인하 관련 공지사항<br /><span class="pl">포르쉐 코리아는 정부의 일시적 개별소비세 인하 정책에 따라 적용 대상 차량에 대해
+                                    개별소비세 감면 혜택을 적용합니다.</span><br /><span class="pl">자세한 사항은 포르쉐 센터를 통하여 문의하시기
+                                    바랍니다.</span></p>
+                            <p>※본 페이지에 기재된 차량 가격은 권장소비자가격(MSRP)으로, 선택 사양, 취득세, 운송료 및 기타 핸들링에 대한 비용은 포함하지 않으며 실제 판매 가격과
+                                상이할 수 있습니다.
                             </p>
                         </div>
                     </div>
@@ -648,6 +650,10 @@
             },
         });
     </script>
+    <script>
+        $(document).ready(function () {
+            $('select').niceSelect();
+        });
     </script>
     <script>
         AOS.init();

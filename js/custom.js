@@ -27,7 +27,7 @@
         $($close).click(function () {
             $(this).removeClass('on');
             $('.full_meun').removeClass('on');
-            $($open).toggleClass('on')
+            $($open).removeClass('on')
         });
 
     });
