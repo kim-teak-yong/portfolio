@@ -402,10 +402,10 @@
                         </div>
 
                         <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev">
+                        <div class="swiper-button-prev main_slide">
                             <img src="imges/right_arrow.png" alt="">
                         </div>
-                        <div class="swiper-button-next">
+                        <div class="swiper-button-next main_slide">
                             <img src="imges/right_arrow.png" alt="">
                         </div>
                     </div>
@@ -539,8 +539,10 @@
                             </a>
                         </div>
                     </div>
-                    <div class="swiper-button-next Services_rigth"><img src="imges/right_arrow.png" alt=""></div>
-                    <div class="swiper-button-prev Services_left"><img src="imges/right_arrow.png" alt=""></div>
+                    <div class="swiper-button-next Services_rigth main_slide"><img src="imges/right_arrow.png" alt="">
+                    </div>
+                    <div class="swiper-button-prev Services_left main_slide"><img src="imges/right_arrow.png" alt="">
+                    </div>
                 </div>
             </section>
         </main>
@@ -577,17 +579,17 @@
                 <div class="inner">
                     <div class="Global_tit">국가 / 지역변경 :</div>
                     <div class="Global">
-                            <select name="nation" class="wide nation">
-                                <option value="" selected>Korea</option>
-                                <option value="">North America</option>
-                                <option value="">Latin America</option>
-                                <option value="">Asia</option>
-                            </select>
-                            <select name="nation" class="wide">
-                                <option value="" selected>국가를 선택해주세요</option>
-                                <option value="">Latin America</option>
-                                <option value="">Asia</option>
-                            </select>
+                        <select name="nation" class="wide nation">
+                            <option value="" selected>Korea</option>
+                            <option value="">North America</option>
+                            <option value="">Latin America</option>
+                            <option value="">Asia</option>
+                        </select>
+                        <select name="nation" class="wide">
+                            <option value="" selected>국가를 선택해주세요</option>
+                            <option value="">Latin America</option>
+                            <option value="">Asia</option>
+                        </select>
                     </div>
                     <div class="add">
                         <span>포르쉐 고객센터 080-8100-911</span>
@@ -632,7 +634,7 @@
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
-            slidesPerView: 1,
+            slidesPerView: 1.5,
             centeredSlides: true,
             spaceBetween: 0,
             speed: 1000,
@@ -657,6 +659,16 @@
     </script>
     <script>
         AOS.init();
+    </script>
+    <script>
+
+        // main video width + height 비율조절
+        const changeHandler = () => {
+            console.log(window.innerHeight);
+            document.querySelector("video").style.height = String(window.innerHeight) + "px";
+        };
+
+        window.addEventListener("resize", changeHandler);
     </script>
 </body>
 
