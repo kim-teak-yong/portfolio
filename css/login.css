@@ -97,7 +97,6 @@ input{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
 
 .login_img {
@@ -261,9 +260,6 @@ input:valid+label::before{
 }
 
 @media (max-width: 768px) {
-    body{
-        height: 100%;
-    }
     .login_wrappy {
         grid-template-areas: 'input';
         grid-template-columns: 1fr;
