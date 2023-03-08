@@ -53,6 +53,8 @@ input{
     box-sizing: border-box;
     font-size: 14px;
     letter-spacing: -0.25px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
 }
 
 .login_btn {
@@ -96,7 +98,6 @@ input{
     justify-content: center;
     align-items: center;
     height: 100%;
-    overflow: hidden;
 }
 
 .login_img {
@@ -263,10 +264,6 @@ input:valid+label::before{
     body{
         overflow: hidden;
         height: 100%;
-    }
-    input{
-        -webkit-appearance: none;
-        -webkit-border-radius: 0;
     }
     .login_wrappy {
         grid-template-areas: 'input';
