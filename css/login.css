@@ -258,6 +258,10 @@ input:valid+label::before{
 }
 
 @media (max-width: 768px) {
+    body{
+        overflow: hidden;
+        height: 100%;
+    }
     .login_wrappy {
         grid-template-areas: 'input';
         grid-template-columns: 1fr;
