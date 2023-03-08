@@ -95,6 +95,8 @@ input{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    overflow: hidden;
 }
 
 .login_img {
@@ -262,6 +264,10 @@ input:valid+label::before{
         overflow: hidden;
         height: 100%;
     }
+    input{
+        -webkit-appearance: none;
+        -webkit-border-radius: 0;
+    }
     .login_wrappy {
         grid-template-areas: 'input';
         grid-template-columns: 1fr;
@@ -273,17 +279,5 @@ input:valid+label::before{
         font-size: 20px;
         line-height: 30px;
         padding: 0;
-    }
-    label::before{
-
-    }
-    input:focus{
-        
-    }
-    input:focus+label::before{
-
-    }
-    input:valid+label::before{
-
     }
 }
