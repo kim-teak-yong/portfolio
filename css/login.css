@@ -262,7 +262,6 @@ input:valid+label::before{
 
 @media (max-width: 768px) {
     body{
-        overflow: hidden;
         height: 100%;
     }
     .login_wrappy {
