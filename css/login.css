@@ -166,6 +166,7 @@ input{
 label::before{
     position: absolute;
     width: 0%;
+    visibility: hidden;
     height: 1px;
     background: #d9d9d9;
     content: '';
@@ -179,6 +180,7 @@ input:focus{
     color: #d9d9d9;
 }
 input:focus+label::before{
+    visibility: visible;
     width: 100%;
     transform: translateX(0%);
     transition: all .6s ease;
@@ -267,5 +269,17 @@ input:valid+label::before{
         font-size: 20px;
         line-height: 30px;
         padding: 0;
+    }
+    label::before{
+
+    }
+    input:focus{
+        
+    }
+    input:focus+label::before{
+
+    }
+    input:valid+label::before{
+
     }
 }
