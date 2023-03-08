@@ -44,7 +44,7 @@ input{
     font-size: 14px;
     letter-spacing: -0.25px;
 }
-.reset > input{
+.reset > input,.login_btn{
     -webkit-appearance: none;
     -webkit-border-radius: 0;
 }
