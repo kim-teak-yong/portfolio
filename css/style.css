@@ -1280,4 +1280,10 @@ nav .gnb>li:hover:after {
     main{
         overflow-x: hidden;
     }
+    nav{
+        display: none;
+    }
+    .copy_ligth ul{
+        display: none;
+    }
 }
