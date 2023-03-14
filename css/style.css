@@ -174,7 +174,7 @@ nav .gnb>li {
     padding: 0 10px;
     line-height: 60px;
     text-align: center;
-    font-family: "Roboto", 'sans-serif';
+    font-family: "Roboto", 'Noto Sans','sans-serif';
     display: inline-block;
 }
 
@@ -434,7 +434,7 @@ nav .gnb>li:hover:after {
 .vis_tit,
 .toptext {
     font-size: 48px;
-    font-family: "Roboto", 'sans-serif';
+    font-family: "Roboto",'Noto Sans', 'sans-serif';
     color: #F0F0F0;
     font-weight: 700;
 }
