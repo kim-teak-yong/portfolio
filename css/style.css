@@ -424,6 +424,7 @@ nav .gnb>li:hover:after {
 }
 
 .text_positon {
+    width: 100%;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -1272,4 +1273,11 @@ nav .gnb>li:hover:after {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+
+@media (max-width: 768px) {
+    main{
+        overflow-x: hidden;
+    }
 }
