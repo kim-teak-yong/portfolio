@@ -402,6 +402,7 @@ nav .gnb>li:hover:after {
     background-color: #000;
     opacity: 0.6;
     z-index: 1;
+    overflow: hidden;
 }
 
 .text_box {
@@ -1278,7 +1279,7 @@ nav .gnb>li:hover:after {
 
 @media (max-width: 768px) {
     main{
-        overflow-x: hidden;
+        overflow: hidden;
     }
     nav{
         display: none;
