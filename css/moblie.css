@@ -43,6 +43,7 @@ img {
     height: 60px;
     position: fixed;
     z-index: 2;
+    background-color: #222;
 }
 
 .headerInner {
@@ -197,7 +198,6 @@ main {
 
 .vis_slide {
     width: 100%;
-    max-width: 750px;
 }
 
 .swiper-slide {
@@ -286,8 +286,8 @@ main {
 }
 .scroll-area {
     flex: 0 0 auto;
-    width: 80%;
-    height: 100%;
+    width: 200px;
+    height: 300px;
     scroll-snap-align: start;
     margin-right: 14px;
 }
