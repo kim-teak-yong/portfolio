@@ -142,46 +142,80 @@
         </header>
         <main>
             <section class="vis_slide">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide item1">
-                            <div class="text_wrap">
-                                <div class="text">
-                                    <p class="tit">Taycan 4S</p>
-                                    <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                <div class="slide_wrappay">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide item1">
+                                <div class="text_wrap">
+                                    <div class="text">
+                                        <p class="tit">Taycan 4S</p>
+                                        <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                                    </div>
+                                    <button>
+                                        <img src="imges/right_arrow.png" alt="">
+                                    </button>
                                 </div>
-                                <button>
-                                    <img src="imges/right_arrow.png" alt="">
-                                </button>
+                                <img src="imges/wallpaperbetter.png" alt="타이칸">
                             </div>
-                            <img src="imges/wallpaperbetter.png" alt="타이칸">
-                        </div>
-                        <div class="swiper-slide item2">
-                            <div class="text_wrap">
-                                <div class="text">
-                                    <p class="tit">Taycan 4S</p>
-                                    <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                            <div class="swiper-slide item2">
+                                <div class="text_wrap">
+                                    <div class="text">
+                                        <p class="tit">Taycan 4S</p>
+                                        <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                                    </div>
+                                    <button>
+                                        <img src="imges/right_arrow.png" alt="">
+                                    </button>
                                 </div>
-                                <button>
-                                    <img src="imges/right_arrow.png" alt="">
-                                </button>
+                                <img src="imges/wallpaperbetter.png" alt="타이칸">
                             </div>
-                            <img src="imges/wallpaperbetter.png" alt="타이칸">
-                        </div>
-                        <div class="swiper-slide item3">
-                            <div class="text_wrap">
-                                <div class="text">
-                                    <p class="tit">Taycan 4S</p>
-                                    <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                            <div class="swiper-slide item3">
+                                <div class="text_wrap">
+                                    <div class="text">
+                                        <p class="tit">Taycan 4S</p>
+                                        <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                                    </div>
+                                    <button>
+                                        <img src="imges/right_arrow.png" alt="">
+                                    </button>
                                 </div>
-                                <button>
-                                    <img src="imges/right_arrow.png" alt="">
-                                </button>
+                                <img src="imges/wallpaperbetter.png" alt="타이칸">
                             </div>
-                            <img src="imges/wallpaperbetter.png" alt="타이칸">
                         </div>
+                        <div class="swiper-pagination page"></div>
                     </div>
-                    <div class="swiper-pagination page"></div>
+                </div>
+            </section>
+            <section class="series">
+                <div class="series_wrappay inner">
+                    <div>
+                        <p class="tit_text">포르쉐.<br/>전 시리즈 살펴보기</p>
+                        <p class="sub_text">포르쉐의 모든 시리즈를 살펴보고<br/>나만의 포르쉐를 만들어보세요.</p>
+                    </div>
+                    <div class="container">
+                        <ul class="tabs">
+                            <li class="tab-link current" data-tab="tab-1">718</li>
+                            <li class="tab-link" data-tab="tab-2">911</li>
+                            <li class="tab-link" data-tab="tab-3">Taycan</li>
+                            <li class="tab-link" data-tab="tab-4">Panamera</li>
+                            <li class="tab-link" data-tab="tab-5">Macan</li>
+                            <li class="tab-link" data-tab="tab-6">Cayenne</li>
+                        </ul>
+                
+                        <div id="tab-1" class="tab-content current">
+                            <div class="scroll_wrap">
+                                <div class="scroll-area"><img src="imges/wallpaperbetter.png" alt=""></div>
+                                <div class="scroll-area"><img src="imges/wallpaperbetter.png" alt=""></div>
+                                <div class="scroll-area"><img src="imges/wallpaperbetter.png" alt=""></div>
+                                <div class="scroll-area"><img src="imges/wallpaperbetter.png" alt=""></div>
+                            </div>
+                        </div>
+                        <div id="tab-2" class="tab-content"></div>
+                        <div id="tab-3" class="tab-content"></div>
+                        <div id="tab-4" class="tab-content"></div>
+                        <div id="tab-5" class="tab-content"></div>
+                        <div id="tab-6" class="tab-content"></div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -206,12 +240,27 @@
         window.addEventListener('resize', () => {
             let vh = window.innerHeight * 0.01
             document.documentElement.style.setProperty('--vh', `${vh}px`)
-        })
+        });
+
+        $(document).ready(function(){
+            $('ul.tabs li').click(function(){
+                var tab_id = $(this).attr('data-tab');
+
+                $('ul.tabs li').removeClass('current');
+                $('.tab-content').removeClass('current');
+
+                $(this).addClass('current');
+                $("#"+tab_id).addClass('current');
+            });
+
+        });
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
             speed: 1000,
+            loop: true,
             pagination: {
                 el: ".swiper-pagination"
             },
