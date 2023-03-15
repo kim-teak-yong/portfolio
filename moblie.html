@@ -25,9 +25,7 @@
                         </a>
                     </div>
                     <button class="move_btn">
-                        <span></span>
-                        <span class="mt"></span>
-                        <span></span>
+                        <div></div>
                     </button>
                 </div>
             </div>
@@ -93,7 +91,7 @@
                 </div>
                 <div class="service_menu">
                     <ul>
-                        <li class="Depth1 mr">
+                        <li class="Depth1">
                             <a href="#">서비스<i class="material-icons icon">expand_more</i></a>
                             <ul class="Depth2">
                                 <li><a href="">E-모빌리티 & E-퍼포먼스</a></li>
@@ -147,6 +145,11 @@
             $(this).find(".icon").toggleClass("on");
             $(this).find(".Depth2").slideToggle("on"); // li 에서 Dpeth2 찾아 toggle 클래스
             $(this).siblings().children(".Depth2").removeClass("on"); // 선택자 제외한 형제 요소에서 Dpeth2 찾아 remove 클래스
+        });
+
+        $(".move_btn").on('click', function () {
+            $(this).toggleClass("on");
+            $('.toggle_menu').toggleClass("on");
         });
     </script>
 </body>

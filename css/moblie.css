@@ -1,12 +1,12 @@
 body{
-    overflow: hidden;
+    overflow-x: hidden;
     touch-action: none;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     word-break:keep-all;
 }
 a, a:hover{
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 button{
     background: inherit;
@@ -21,13 +21,10 @@ img{
     width: 100%;
     object-fit: cover;
 }
-.mr{
-    margin-right: 20px;
-}
 .inner{
     max-width: 750px;
     margin: 0 auto;
-    padding: 0 48px;
+    padding: 0 20px;
 }
 #wrap{
     width: 100%;
@@ -59,13 +56,38 @@ img{
     margin-right: 12px;
 }
 .move_btn{
-    width: 20px;
-    height: 20px;
+    position: relative;
 }
-.move_btn span{
+.move_btn div{
+    width: 25px;
+    height: 3px;
+    margin: 6px 0;
+    background-color: #fff;
+}
+.move_btn.on div{
+    transform: scale(0);
+}
+.move_btn::before{
+    content: '';
+    display: block;
     height: 3px;
     background-color: #fff;
+    position: relative;
+}
+.move_btn.on::before{
+    transform: translateY(9px) rotate(45deg);
+    transition: 0.5s;
+}
+.move_btn::after{
+    content: '';
     display: block;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+}
+.move_btn.on::after{
+    transform: translateY(-9px) rotate(-45deg);
+    transition: 0.5s;
 }
 .mt{
     margin: 5px 0;
@@ -74,7 +96,7 @@ img{
     padding: 10px 0;
 }
 .Depth2 > li > a{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     color: #C3C3C3;
 }
@@ -86,10 +108,20 @@ img{
 }
 .toggle_menu{
     height: 100vh;
-    transform: translateX(0%);
+    transform: translateX(100%);
     background-color: #222;
     padding-top: 24px;
-    overflow-y:auto
+    overflow-y:auto;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+
+}.toggle_menu.on{
+    transform: translateX(0);
+    visibility: visible;
+    transition: 0.5s;
+    opacity: 1;
+    z-index: 10;
 }
 .toggle_menu a{
     color: #fff;
@@ -100,18 +132,16 @@ img{
 }
 .car_menu > ul > li,
 .service_menu > ul >  li{
-    padding: 20px 0;
+    padding: 14px 0;
 }
 .service_menu{
     margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
 }
 .Depth1 > a{
     display: flex;
     justify-content: space-between;
-    line-height: 24px;
-    font-size: 24px;
+    line-height: 20px;
+    font-size: 20px;
 }
 .icon{
     display: block;
