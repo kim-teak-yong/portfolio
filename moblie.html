@@ -93,8 +93,6 @@
                             </ul>
                         </li>
                     </ul>
-                </div>
-                <div class="service_menu">
                     <ul>
                         <li class="Depth1">
                             <a href="#">서비스<i class="material-icons icon">expand_more</i></a>
@@ -148,22 +146,37 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide item1">
                             <div class="text_wrap">
-                                <p class="tit">Taycan 4S</p>
-                                <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                                <div class="text">
+                                    <p class="tit">Taycan 4S</p>
+                                    <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                                </div>
+                                <button>
+                                    <img src="imges/right_arrow.png" alt="">
+                                </button>
                             </div>
                             <img src="imges/wallpaperbetter.png" alt="타이칸">
                         </div>
                         <div class="swiper-slide item2">
                             <div class="text_wrap">
-                                <p class="tit">Taycan 4S</p>
-                                <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                                <div class="text">
+                                    <p class="tit">Taycan 4S</p>
+                                    <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                                </div>
+                                <button>
+                                    <img src="imges/right_arrow.png" alt="">
+                                </button>
                             </div>
                             <img src="imges/wallpaperbetter.png" alt="타이칸">
                         </div>
                         <div class="swiper-slide item3">
                             <div class="text_wrap">
-                                <p class="tit">Taycan 4S</p>
-                                <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                                <div class="text">
+                                    <p class="tit">Taycan 4S</p>
+                                    <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                                </div>
+                                <button>
+                                    <img src="imges/right_arrow.png" alt="">
+                                </button>
                             </div>
                             <img src="imges/wallpaperbetter.png" alt="타이칸">
                         </div>
@@ -188,6 +201,12 @@
             $('body').toggleClass("on");
         });
 
+        let vh = window.innerHeight * 0.01
+        document.documentElement.style.setProperty('--vh', `${vh}px`)
+        window.addEventListener('resize', () => {
+            let vh = window.innerHeight * 0.01
+            document.documentElement.style.setProperty('--vh', `${vh}px`)
+        })
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>

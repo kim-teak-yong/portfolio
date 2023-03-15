@@ -146,11 +146,11 @@ img {
 }
 
 .toggle_menu {
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     transform: translateX(100%);
     background-color: #222;
     padding-top: 24px;
-    overflow-y: auto;
+    overflow-y: scroll;
     transition: 0.5s;
     opacity: 0;
     visibility: hidden;
@@ -168,13 +168,12 @@ img {
     color: #fff;
 }
 
-.car_menu>ul>li,
-.service_menu>ul>li {
+.car_menu>ul>li{
     padding: 14px 0;
 }
 
-.service_menu {
-    margin-top: 20px;
+.car_menu {
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 .Depth1>a {
@@ -201,40 +200,46 @@ main {
 }
 .text_wrap{
     position: absolute;
-    left: 48px;
-    bottom: 16%;
+    left: 20px;
+    bottom: 18%;
+    display: flex;
+    justify-content: space-between;
 }
-.text_wrap > p{
+.text_wrap p{
     color:#fff;
     font-family: 'Noto Sans KR', sans-serif;
     letter-spacing: -0.25px;
     display: block;
     padding: 10px 0;
-    font-size: 1.25em;
+    font-size: 1em;
+    white-space: nowrap;
+}
+.text_wrap > button{
+    margin-left: 40px;
 }
 .text_wrap .tit{
     font-size: 2.63em;
     font-weight: bold;
 }
 .swiper-pagination-bullet{
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border: 1px solid #fff;
     background: none;
     opacity: 1;
 }
 .swiper-pagination-bullet-active{
-    width: 20px;
-    height: 8px;
+    width: 24px;
+    height: 10px;
     border-radius: 20px;
     background: #fff;
-    transition: 0.5s;
+    transition: 1s;
 }
 .page{
     display: flex;
     align-items: center;
     position: absolute;
-    left: 48px !important;
+    left: 20px !important;
     bottom: 12% !important;
 }
 footer {}
