@@ -91,7 +91,6 @@ input{
 }
 
 .login_img {
-    background-color: yellow;
     grid-area: img;
     position: relative;
 }

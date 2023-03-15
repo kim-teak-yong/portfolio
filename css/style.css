@@ -555,6 +555,7 @@ nav .gnb>li:hover:after {
     font-family: 'Noto Sans', sans-serif;
     margin-bottom: 5px;
     color: #262626;
+    white-space: nowrap;
 }
 
 .bottom {
@@ -601,7 +602,7 @@ nav .gnb>li:hover:after {
 
 .item>.text_positon {
     top: 30%;
-    z-index: 1;
+    z-index: 2;
 }
 
 .item_tit {
