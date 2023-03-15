@@ -5,6 +5,7 @@ body {
     touch-action: none;
     font-family: 'Noto Sans KR', sans-serif;
     word-break: keep-all;
+    height: 10000px;
 }
 a,
 a:hover {
