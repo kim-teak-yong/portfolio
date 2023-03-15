@@ -29,7 +29,9 @@ img{
 #wrap{
     width: 100%;
 }
-
+#header{
+    width: 100%;
+}
 .headerInner{
     max-width: 750px;
     height: 60px;
@@ -39,54 +41,55 @@ img{
     align-items: center;
 }
 .logo > a{
-    width: 146px;
-    display: block;
-}
-.logo > a > img{
+    background: url(../imges/logo_w.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 140px;
     height: 10px;
+    display: block;
 }
 .login_wrap{
     display: flex;
+    align-items: center;
 }
 .login_btn{
     width: 20px;
-    height: 20px;
+    height: 30px;
     display: flex;
     align-items: center;
-    margin-right: 12px;
+    margin-right: 20px;
+}
+.login{
+    font-size: 28px;
+    color: #fff;
 }
 .move_btn{
     position: relative;
 }
 .move_btn div{
-    width: 25px;
+    width: 24px;
     height: 3px;
-    margin: 6px 0;
+    margin: 4px 0;
     background-color: #fff;
 }
 .move_btn.on div{
     transform: scale(0);
 }
-.move_btn::before{
+.move_btn::before,.move_btn::after{
     content: '';
     display: block;
     height: 3px;
     background-color: #fff;
     position: relative;
+    width: 24px;
 }
 .move_btn.on::before{
-    transform: translateY(9px) rotate(45deg);
+    transform: translateY(7px) rotate(45deg);
     transition: 0.5s;
 }
-.move_btn::after{
-    content: '';
-    display: block;
-    height: 3px;
-    background-color: #fff;
-    position: relative;
-}
 .move_btn.on::after{
-    transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-7px) rotate(-45deg);
     transition: 0.5s;
 }
 .mt{
@@ -111,7 +114,7 @@ img{
     transform: translateX(100%);
     background-color: #222;
     padding-top: 24px;
-    overflow-y:auto;
+    overflow-y:scroll;
     transition: 0.5s;
     opacity: 0;
     visibility: hidden;
@@ -145,9 +148,6 @@ img{
 }
 .icon{
     display: block;
-}
-.service_menu li{
-
 }
 main{
 
