@@ -145,15 +145,17 @@
         <footer></footer>
     </div>
     <script>
+
         $(".Depth1").on('click', function () {
             $(this).find(".icon").toggleClass("on");
-            $(this).find(".Depth2").slideToggle("on"); // li 에서 Dpeth2 찾아 toggle 클래스
+            $(this).find(".Depth2").toggle('on'); // li 에서 Dpeth2 찾아 toggle 클래스
             $(this).siblings().children(".Depth2").removeClass("on"); // 선택자 제외한 형제 요소에서 Dpeth2 찾아 remove 클래스
         });
 
         $(".move_btn").on('click', function () {
             $(this).toggleClass("on");
             $('.toggle_menu').toggleClass("on");
+            $('body').toggleClass("on");
         });
     </script>
 </body>

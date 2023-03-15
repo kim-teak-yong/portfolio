@@ -1,14 +1,20 @@
-body{
+body {
     overflow-x: hidden;
     touch-action: none;
     font-family: 'Noto Sans KR', sans-serif;
-    word-break:keep-all;
+    word-break: keep-all;
+    height: 100vh;
 }
-a, a:hover{
+body.on{
+    background-color: #222;
+}
+a,
+a:hover {
     text-decoration: none;
     font-family: 'Noto Sans KR', sans-serif;
 }
-button{
+
+button {
     background: inherit;
     border: none;
     box-shadow: none;
@@ -17,22 +23,27 @@ button{
     overflow: visible;
     cursor: pointer
 }
-img{
+
+img {
     width: 100%;
     object-fit: cover;
 }
-.inner{
+
+.inner {
     max-width: 750px;
     margin: 0 auto;
     padding: 0 20px;
 }
-#wrap{
+
+#wrap {
     width: 100%;
 }
-#header{
+
+#header {
     width: 100%;
 }
-.headerInner{
+
+.headerInner {
     max-width: 750px;
     height: 60px;
     background-color: #222;
@@ -40,7 +51,8 @@ img{
     justify-content: space-between;
     align-items: center;
 }
-.logo > a{
+
+.logo>a {
     background: url(../imges/logo_w.png);
     background-repeat: no-repeat;
     background-position: center center;
@@ -49,34 +61,42 @@ img{
     height: 10px;
     display: block;
 }
-.login_wrap{
+
+.login_wrap {
     display: flex;
     align-items: center;
 }
-.login_btn{
+
+.login_btn {
     width: 20px;
     height: 30px;
     display: flex;
     align-items: center;
     margin-right: 20px;
 }
-.login{
+
+.login {
     font-size: 28px;
     color: #fff;
 }
-.move_btn{
+
+.move_btn {
     position: relative;
 }
-.move_btn div{
+
+.move_btn div {
     width: 24px;
     height: 3px;
     margin: 4px 0;
     background-color: #fff;
 }
-.move_btn.on div{
+
+.move_btn.on div {
     transform: scale(0);
 }
-.move_btn::before,.move_btn::after{
+
+.move_btn::before,
+.move_btn::after {
     content: '';
     display: block;
     height: 3px;
@@ -84,75 +104,92 @@ img{
     position: relative;
     width: 24px;
 }
-.move_btn.on::before{
+
+.move_btn.on::before {
     transform: translateY(7px) rotate(45deg);
     transition: 0.5s;
 }
-.move_btn.on::after{
+
+.move_btn.on::after {
     transform: translateY(-7px) rotate(-45deg);
     transition: 0.5s;
 }
-.mt{
+
+.mt {
     margin: 5px 0;
 }
-.Depth2 > li {
+
+.Depth2>li {
     padding: 10px 0;
 }
-.Depth2 > li > a{
+
+.Depth2>li>a {
     font-size: 16px;
     font-weight: 400;
     color: #C3C3C3;
 }
-.icon{
+
+.Depth2 {
+    padding-top: 24px;
+    display: none;
+}
+
+.Depth2.on {
+    display: block;
+}
+
+.icon {
     transition: 0.5s;
 }
-.icon.on{
+
+.icon.on {
     transform: rotate(180deg);
 }
-.toggle_menu{
-    height: 100vh;
+
+.toggle_menu {
+    height: 100%;
     transform: translateX(100%);
     background-color: #222;
     padding-top: 24px;
-    overflow-y:scroll;
+    overflow-y: auto;
     transition: 0.5s;
     opacity: 0;
     visibility: hidden;
 
-}.toggle_menu.on{
+}
+
+.toggle_menu.on {
     transform: translateX(0);
     visibility: visible;
     transition: 0.5s;
     opacity: 1;
     z-index: 10;
 }
-.toggle_menu a{
+
+.toggle_menu a {
     color: #fff;
 }
-.Depth2{
-    padding-top: 24px;
-    display: none;
-}
-.car_menu > ul > li,
-.service_menu > ul >  li{
+
+.car_menu>ul>li,
+.service_menu>ul>li {
     padding: 14px 0;
 }
-.service_menu{
+
+.service_menu {
     margin-top: 20px;
 }
-.Depth1 > a{
+
+.Depth1>a {
     display: flex;
     justify-content: space-between;
     line-height: 20px;
     font-size: 20px;
 }
-.icon{
+
+.icon {
     display: block;
 }
-main{
 
-}
+main {}
 
-footer{
-
-}
+footer {}
