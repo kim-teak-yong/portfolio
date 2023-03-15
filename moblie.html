@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/moblie.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -141,14 +142,43 @@
                 </div>
             </nav>
         </header>
-        <main></main>
+        <main>
+            <section class="vis_slide">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide item1">
+                            <div class="text_wrap">
+                                <p class="tit">Taycan 4S</p>
+                                <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                            </div>
+                            <img src="imges/wallpaperbetter.png" alt="타이칸">
+                        </div>
+                        <div class="swiper-slide item2">
+                            <div class="text_wrap">
+                                <p class="tit">Taycan 4S</p>
+                                <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                            </div>
+                            <img src="imges/wallpaperbetter.png" alt="타이칸">
+                        </div>
+                        <div class="swiper-slide item3">
+                            <div class="text_wrap">
+                                <p class="tit">Taycan 4S</p>
+                                <p>E-모빌리티, 그리고 스포츠카의 미래</p>
+                            </div>
+                            <img src="imges/wallpaperbetter.png" alt="타이칸">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination page"></div>
+                </div>
+            </section>
+        </main>
         <footer></footer>
     </div>
     <script>
 
         $(".Depth1").on('click', function () {
             $(this).find(".icon").toggleClass("on");
-            $(this).find(".Depth2").toggle('on'); // li 에서 Dpeth2 찾아 toggle 클래스
+            $(this).find(".Depth2").slideToggle('on'); // li 에서 Dpeth2 찾아 toggle 클래스
             $(this).siblings().children(".Depth2").removeClass("on"); // 선택자 제외한 형제 요소에서 Dpeth2 찾아 remove 클래스
         });
 
@@ -156,6 +186,16 @@
             $(this).toggleClass("on");
             $('.toggle_menu').toggleClass("on");
             $('body').toggleClass("on");
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            speed: 1000,
+            pagination: {
+                el: ".swiper-pagination"
+            },
         });
     </script>
 </body>
