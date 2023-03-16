@@ -331,10 +331,11 @@ footer {}
     height: 100%;
 }
 
-.swiper-slide {
+.card .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 280px;
 }
 
 .card .swiper-slide img {
