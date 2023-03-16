@@ -149,11 +149,13 @@ img {
 .Depth2.on {
     display: block;
 }
-
 .icon {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 40px;
     transition: 0.5s;
 }
-
 .icon.on {
     transform: rotate(180deg);
 }
@@ -183,6 +185,7 @@ img {
 
 .car_menu>ul>li {
     padding: 14px 0;
+    position: relative;
 }
 
 .car_menu {
@@ -191,13 +194,9 @@ img {
 
 .Depth1>a {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     line-height: 20px;
     font-size: 20px;
-}
-
-.icon {
-    display: block;
 }
 
 main {
