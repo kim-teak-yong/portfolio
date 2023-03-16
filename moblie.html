@@ -220,9 +220,9 @@
                         <div id="tab-2" class="tab-content">
                             <div class="swiper card">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide"><img src="imges/wallpaperbetter.png" alt=""></div>
-                                    <div class="swiper-slide"><img src="imges/wallpaperbetter.png" alt=""></div>
-                                    <div class="swiper-slide"><img src="imges/wallpaperbetter.png" alt=""></div>
+                                    <div class="swiper-slide card_wrap"><img src="imges/wallpaperbetter.png" alt=""></div>
+                                    <div class="swiper-slide card_wrap"><img src="imges/wallpaperbetter.png" alt=""></div>
+                                    <div class="swiper-slide card_wrap"><img src="imges/wallpaperbetter.png" alt=""></div>
                                     <div class="swiper-slide">Slide 4</div>
                                     <div class="swiper-slide">Slide 5</div>
                                     <div class="swiper-slide">Slide 6</div>
@@ -285,15 +285,79 @@
                 el: ".swiper-pagination"
             },
         });
-        var swiper = new Swiper(".card", {
-            slidesPerView: 1.5,
-            spaceBetween: 10,
-            breakpoints: { //반응형 조건 속성
-                375: { //375 이상일 경우
-                    slidesPerView: 1.5, //레이아웃 2열
-                },
+        // var swiper = new Swiper(".card", {
+        //     slidesPerView: 2.2,
+        //     spaceBetween: 10,
+        //     breakpoints: { //반응형 조건 속성
+        //         375: { //375 이상일 경우
+        //             slidesPerView: 2.2, //레이아웃 2열
+        //         },
+        //     },
+        // });
+    </script>
+    <script>
+        var interleaveOffset = 1;
+
+        var interleaveEffect = {
+
+            onProgress: function (swiper, progress) {
+                for (var i = 0; i < swiper.slides.length; i++) {
+                    var slide = swiper.slides[i];
+                    var translate, innerTranslate;
+                    progress = slide.progress;
+
+                    if (progress > 0) {
+                        translate = progress * swiper.width;
+                        innerTranslate = translate * interleaveOffset;
+                    }
+                    else {
+                        innerTranslate = Math.abs(progress * swiper.width) * interleaveOffset;
+                        translate = 0;
+                    }
+
+                    $(slide).css({
+                        transform: 'translate3d(' + translate + 'px,0,0)'
+                    });
+
+                    $(slide).find('.card_wrap').css({
+                        transform: 'translate3d(' + innerTranslate + 'px,0,0)'
+                    });
+                }
             },
-        });
+
+            onTouchStart: function (swiper) {
+                for (var i = 0; i < swiper.slides.length; i++) {
+                    $(swiper.slides[i]).css({ transition: '' });
+                }
+            },
+
+            onSetTransition: function (swiper, speed) {
+                for (var i = 0; i < swiper.slides.length; i++) {
+                    $(swiper.slides[i])
+                        .find('.card_wrap')
+                        .andSelf()
+                        .css({ transition: speed + 'ms' });
+                }
+            }
+        };
+
+        var swiperOptions = {
+            slidesPerView: "auto",
+            spaceBetween: 10,
+            centeredSlides: false,
+            loop: false,
+            speed: 1000,
+            watchSlidesProgress: true,
+            mousewheelControl: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        };
+
+        swiperOptions = $.extend(swiperOptions, interleaveEffect);
+
+        var swiper = new Swiper('.card', swiperOptions);
     </script>
     <script>
     </script>

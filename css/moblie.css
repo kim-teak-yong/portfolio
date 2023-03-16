@@ -335,6 +335,7 @@ footer {}
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 320px !important;
     height: 280px;
 }
 
