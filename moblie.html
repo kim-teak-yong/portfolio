@@ -189,8 +189,8 @@
             <section class="series">
                 <div class="series_wrappay inner">
                     <div>
-                        <p class="tit_text">포르쉐.<br/>전 시리즈 살펴보기</p>
-                        <p class="sub_text">포르쉐의 모든 시리즈를 살펴보고<br/>나만의 포르쉐를 만들어보세요.</p>
+                        <p class="tit_text">포르쉐.<br />전 시리즈 살펴보기</p>
+                        <p class="sub_text">포르쉐의 모든 시리즈를 살펴보고<br />나만의 포르쉐를 만들어보세요.</p>
                     </div>
                     <div class="container">
                         <ul class="tabs">
@@ -201,16 +201,37 @@
                             <li class="tab-link" data-tab="tab-5">Macan</li>
                             <li class="tab-link" data-tab="tab-6">Cayenne</li>
                         </ul>
-                
+
                         <div id="tab-1" class="tab-content current">
-                            <div class="scroll_wrap">
-                                <div class="scroll-area"><img src="imges/wallpaperbetter.png" alt=""></div>
-                                <div class="scroll-area"><img src="imges/wallpaperbetter.png" alt=""></div>
-                                <div class="scroll-area"><img src="imges/wallpaperbetter.png" alt=""></div>
-                                <div class="scroll-area"><img src="imges/wallpaperbetter.png" alt=""></div>
+                            <div class="swiper card">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="imges/wallpaperbetter.png" alt=""></div>
+                                    <div class="swiper-slide"><img src="imges/wallpaperbetter.png" alt=""></div>
+                                    <div class="swiper-slide"><img src="imges/wallpaperbetter.png" alt=""></div>
+                                    <div class="swiper-slide">Slide 4</div>
+                                    <div class="swiper-slide">Slide 5</div>
+                                    <div class="swiper-slide">Slide 6</div>
+                                    <div class="swiper-slide">Slide 7</div>
+                                    <div class="swiper-slide">Slide 8</div>
+                                    <div class="swiper-slide">Slide 9</div>
+                                </div>
                             </div>
                         </div>
-                        <div id="tab-2" class="tab-content"></div>
+                        <div id="tab-2" class="tab-content">
+                            <div class="swiper card">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="imges/wallpaperbetter.png" alt=""></div>
+                                    <div class="swiper-slide"><img src="imges/wallpaperbetter.png" alt=""></div>
+                                    <div class="swiper-slide"><img src="imges/wallpaperbetter.png" alt=""></div>
+                                    <div class="swiper-slide">Slide 4</div>
+                                    <div class="swiper-slide">Slide 5</div>
+                                    <div class="swiper-slide">Slide 6</div>
+                                    <div class="swiper-slide">Slide 7</div>
+                                    <div class="swiper-slide">Slide 8</div>
+                                    <div class="swiper-slide">Slide 9</div>
+                                </div>
+                            </div>
+                        </div>
                         <div id="tab-3" class="tab-content"></div>
                         <div id="tab-4" class="tab-content"></div>
                         <div id="tab-5" class="tab-content"></div>
@@ -235,26 +256,25 @@
             $('body').toggleClass("on");
         });
 
-        let vh = window.innerHeight * 0.01
-        document.documentElement.style.setProperty('--vh', `${vh}px`)
-        window.addEventListener('resize', () => {
-            let vh = window.innerHeight * 0.01
-            document.documentElement.style.setProperty('--vh', `${vh}px`)
-        });
-
-        $(document).ready(function(){
-            $('ul.tabs li').click(function(){
+        $(document).ready(function () {
+            $('ul.tabs li').click(function () {
                 var tab_id = $(this).attr('data-tab');
 
                 $('ul.tabs li').removeClass('current');
                 $('.tab-content').removeClass('current');
 
                 $(this).addClass('current');
-                $("#"+tab_id).addClass('current');
+                $("#" + tab_id).addClass('current');
             });
 
         });
 
+        let vh = window.innerHeight * 0.01
+        document.documentElement.style.setProperty('--vh', `${vh}px`)
+        window.addEventListener('resize', () => {
+            let vh = window.innerHeight * 0.01
+            document.documentElement.style.setProperty('--vh', `${vh}px`)
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
@@ -265,6 +285,17 @@
                 el: ".swiper-pagination"
             },
         });
+        var swiper = new Swiper(".card", {
+            slidesPerView: 2.3,
+            spaceBetween: 10,
+            breakpoints: { //반응형 조건 속성
+                375: { //375 이상일 경우
+                    slidesPerView: 2.3, //레이아웃 2열
+                },
+            },
+        });
+    </script>
+    <script>
     </script>
 </body>
 

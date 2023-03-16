@@ -1,11 +1,16 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
-
+html{
+    overflow-x: hidden;
+}
 body {
     overflow-x: hidden;
     touch-action: none;
     font-family: 'Noto Sans KR', sans-serif;
     word-break: keep-all;
-    height: 10000px;
+    height: calc(var(--vh, 1vh) * 100);
+}
+.body::-webkit-scrollbar {
+    display: none;
 }
 a,
 a:hover {
@@ -30,6 +35,7 @@ img {
 }
 
 .inner {
+    width: 100%;
     max-width: 750px;
     margin: 0 auto;
     padding: 0 20px;
@@ -42,7 +48,7 @@ img {
 #header {
     width: 100%;
     height: 60px;
-    position: fixed;
+    position: relative;
     z-index: 2;
     background-color: #222;
 }
@@ -69,6 +75,8 @@ img {
 .login_wrap {
     display: flex;
     align-items: center;
+    position: absolute;
+    right: 20px;
 }
 
 .login_btn {
@@ -193,12 +201,11 @@ img {
 }
 
 main {
-    width: 100%;
-    padding-top: 60px;
+    width: 100vw;
 }
 
 .vis_slide {
-    width: 100%;
+    width: 100vw;
 }
 
 .swiper-slide {
@@ -221,6 +228,7 @@ main {
     padding: 10px 0;
     font-size: 1em;
     white-space: nowrap;
+    text-align: left;
 }
 
 .text_wrap>button {
@@ -270,37 +278,14 @@ main {
 }
 
 .sub_text {
-    font-size: 1.25em;
-    line-height: 24px;
+    font-size: 1.00em;
+    line-height: 20px;
 }
 
 .container {
     margin-top: 24px;
 }
 
-.scroll_wrap{
-    display: flex;
-    height: 100%;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    border-radius: 10px;
-}
-.scroll-area {
-    flex: 0 0 auto;
-    width: 200px;
-    height: 300px;
-    scroll-snap-align: start;
-    margin-right: 14px;
-}
-.scroll-area > img{
-    border-radius: 10px;
-}
-.scroll-area:last-child{
-    margin-right: 0;
-}
-.scroll_wrap::-webkit-scrollbar {
-    display: none;
-}
 .tabs {
     display: flex;
     overflow-x: scroll;
@@ -308,7 +293,7 @@ main {
     /* 인터넷 익스플로러 */
     scrollbar-width: none;
     /* 파이어폭스 */
-    margin: 20px 0;
+    padding: 20px 20px 20px 0;
 }
 
 .tabs::-webkit-scrollbar {
@@ -316,16 +301,21 @@ main {
 }
 
 ul.tabs li {
-    background: none;
-    color: #222;
+    background: #fff;
+    color: #BFBFBF;
     display: inline-block;
-    padding: 10px 15px;
+    padding: 10px 20px;
     cursor: pointer;
+    box-shadow: 2px 4px 12px rgb(0 0 0 / 12%);
+    border-radius: 20px;
+    margin: 0 6px;
 }
-
+ul.tabs li:first-child{
+    margin-left: 0;
+}
 ul.tabs li.current {
-    background: #ededed;
-    color: #222;
+    background: #3B3B3B;
+    color: #fff;
 }
 
 .tab-content {
@@ -337,3 +327,22 @@ ul.tabs li.current {
 }
 
 footer {}
+
+.card {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
