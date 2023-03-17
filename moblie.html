@@ -11,7 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/moblie.css">
+    <link rel="stylesheet" href="css/select.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
     <title>포르쉐코리아 - PorscheAG</title>
 </head>
 
@@ -324,8 +326,113 @@
                     </div>
                 </div>
             </section>
+            <section class="life">
+                <div class="life_wrappay inner">
+                    <div>
+                        <p class="tit_text">소중한.<br />나만의 포르쉐라이프</p>
+                        <p class="sub_text">다양하고 즐겁고 소중한 포르쉐 라이프를<br />즐겨보세요.</p>
+                    </div>
+                    <div class="swiper life_slide">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide lifewrap">
+                                <a href="#" class="life_item">
+                                    <img src="imges/life_01.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide lifewrap">
+                                <a href="#" class="life_item">
+                                    <img src="imges/life_02.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide lifewrap">
+                                <a href="#" class="life_item">
+                                    <img src="imges/life_03.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide lifewrap last">
+                                <a href="#" class="life_item last">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
-        <footer></footer>
+        <footer>
+            <div class="footer">
+                <div class="footer_top">
+                    <ul class="ft_Depth1">
+                        <li>
+                            <a href="#">Build & Find<i class="material-icons icon">expand_more</i></a>
+                            <ul class="ft_Depth2">
+                                <li><a href="#">나만의 포르쉐 만들기</a></li>
+                                <li><a href="#">포르쉐 인증 중고차 찾기</a></li>
+                                <li><a href="#">포르쉐 센터 찾기</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="ft_Depth1">
+                        <li>
+                            <a href="#">Online Services<i class="material-icons icon">expand_more</i></a>
+                            <ul class="ft_Depth2">
+                                <li><a href="#">Porsche Financial Services</a></li>
+                                <li><a href="#">뉴스레터 구독</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="ft_Depth1">
+                        <li>
+                            <a href="#">Behind the Scenes<i class="material-icons icon">expand_more</i></a>
+                            <ul class="ft_Depth2">
+                                <li><a href="#">Passion Motorsports</a></li>
+                                <li><a href="#">Porsche Experience</a></li>
+                                <li><a href="#">Porsche Classic</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="ft_Depth1">
+                        <li>
+                            <a href="#">Porsche Company<i class="material-icons icon">expand_more</i></a>
+                            <ul class="ft_Depth2">
+                                <li><a href="#">Contact & Information</a></li>
+                                <li><a href="#">Christophorus - The Porsche Magazine</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_bottom">
+                    <div class="Global_tit">국가 / 지역변경 :</div>
+                    <div class="Global">
+                        <select name="nation" class="wide nation">
+                            <option value="" selected>Korea</option>
+                            <option value="">North America</option>
+                            <option value="">Latin America</option>
+                            <option value="">Asia</option>
+                        </select>
+                        <select name="nation" class="wide nation">
+                            <option value="" selected>국가를 선택해주세요</option>
+                            <option value="">Latin America</option>
+                            <option value="">Asia</option>
+                        </select>
+                    </div>
+                    <div class="add">
+                        <span>포르쉐 고객센터 080-8100-911</span>
+                        <div class="caution">
+                            <p>※ 표기된 연비는 표준 모드에 의한 것으로 도로상태, 운전방법, 차량적재, 정비상태 및 외기온도에 따라 실주행연비와 차이가 있습니다.</p>
+                            <p>※ 본 웹사이트에 기재된 내용은 사전에 예고 없이 변경될 수 있으므로 실제 차량과 다를 수 있습니다.</p>
+                            <p>※ 차량 이미지는 실제 모델과 다를 수 있으며, 국내 적용 사양 및 구성에 따라 차이가 있을 수 있습니다.</p>
+                            <p>※ 국내 출시 이전 차량의 경우 국내 공인 연비 정보 및 타이어 에너지소비효율 정보가 존재하지 않을 수 있습니다.</p>
+                            <p>※ 개별소비세 인하 관련 공지사항<br /><span class="pl">포르쉐 코리아는 정부의 일시적 개별소비세 인하 정책에 따라 적용 대상 차량에 대해
+                                    개별소비세 감면 혜택을 적용합니다.</span><br /><span class="pl">자세한 사항은 포르쉐 센터를 통하여 문의하시기
+                                    바랍니다.</span></p>
+                            <p>※본 페이지에 기재된 차량 가격은 권장소비자가격(MSRP)으로, 선택 사양, 취득세, 운송료 및 기타 핸들링에 대한 비용은 포함하지 않으며 실제 판매 가격과
+                                상이할 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
@@ -333,7 +440,11 @@
         $(".Depth1").on('click', function () {
             $(this).find(".icon").toggleClass("on");
             $(this).find(".Depth2").slideToggle('on'); // li 에서 Dpeth2 찾아 toggle 클래스
-            $(this).siblings().children(".Depth2").removeClass("on"); // 선택자 제외한 형제 요소에서 Dpeth2 찾아 remove 클래스
+        });
+
+        $(".ft_Depth1").on('click', function () {
+            $(this).find(".icon").toggleClass("on");
+            $(this).find(".ft_Depth2").slideToggle('on'); // li 에서 Dpeth2 찾아 toggle 클래스
         });
 
         $(".move_btn").on('click', function () {
@@ -494,6 +605,70 @@
         var swiper = new Swiper('.serviceslide', swiperOptions);
     </script>
     <script>
+        var interleaveOffset = 1;
+
+        var interleaveEffect = {
+
+            onProgress: function (swiper, progress) {
+                for (var i = 0; i < swiper.slides.length; i++) {
+                    var slide = swiper.slides[i];
+                    var translate, innerTranslate;
+                    progress = slide.progress;
+
+                    if (progress > 0) {
+                        translate = progress * swiper.width;
+                        innerTranslate = translate * interleaveOffset;
+                    }
+                    else {
+                        innerTranslate = Math.abs(progress * swiper.width) * interleaveOffset;
+                        translate = 0;
+                    }
+
+                    $(slide).css({
+                        transform: 'translate3d(' + translate + 'px,0,0)'
+                    });
+
+                    $(slide).find('.swiper-slide.lifewrap').css({
+                        transform: 'translate3d(' + innerTranslate + 'px,0,0)'
+                    });
+                }
+            },
+
+            onTouchStart: function (swiper) {
+                for (var i = 0; i < swiper.slides.length; i++) {
+                    $(swiper.slides[i]).css({ transition: '' });
+                }
+            },
+
+            onSetTransition: function (swiper, speed) {
+                for (var i = 0; i < swiper.slides.length; i++) {
+                    $(swiper.slides[i])
+                        .find('.swiper-slide.lifewrap')
+                        .andSelf()
+                        .css({ transition: speed + 'ms' });
+                }
+            }
+        };
+
+        var swiperOptions = {
+            slidesPerView: "auto",
+            spaceBetween: 10,
+            centeredSlides: false,
+            loop: false,
+            speed: 1000,
+            watchSlidesProgress: true,
+            mousewheelControl: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        };
+
+        swiperOptions = $.extend(swiperOptions, interleaveEffect);
+
+        var swiper = new Swiper('.swiper.life_slide', swiperOptions);
+    </script>
+    <script>
     </script>
     <script>
         //아이폰 세로 값 vh 변환코드
@@ -502,6 +677,11 @@
         window.addEventListener('resize', () => {
             let vh = window.innerHeight * 0.01
             document.documentElement.style.setProperty('--vh', `${vh}px`)
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('select').niceSelect();
         });
     </script>
 </body>
