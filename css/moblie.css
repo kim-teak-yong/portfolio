@@ -7,15 +7,19 @@ body {
     touch-action: none;
     font-family: 'Noto Sans KR', sans-serif;
     word-break: keep-all;
-    height: calc(var(--vh, 1vh) * 100);
+    height: 100%;
 }
 .body::-webkit-scrollbar {
     display: none;
+}
+h1~h6,p,span{
+    font-family: 'Noto Sans KR', sans-serif;
 }
 a,
 a:hover {
     text-decoration: none;
     font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -0.25px;
 }
 
 button {
@@ -70,6 +74,7 @@ img {
     width: 140px;
     height: 10px;
     display: block;
+    
 }
 
 .login_wrap {
@@ -84,7 +89,7 @@ img {
     height: 30px;
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 14px;
 }
 
 .login {
@@ -200,17 +205,19 @@ img {
 }
 
 main {
-    width: 100vw;
+    width: 100%;
 }
 
 .vis_slide {
-    width: 100vw;
+    width: 100%;
 }
 
 .swiper-slide {
     position: relative;
 }
-
+.swiper-slide.main{
+    border-radius: 0;
+}
 .text_wrap {
     position: absolute;
     left: 20px;
@@ -278,6 +285,7 @@ main {
 .sub_text {
     font-size: 1.00em;
     line-height: 20px;
+    font-weight: 300;
 }
 
 .container {
@@ -291,7 +299,7 @@ main {
     /* 인터넷 익스플로러 */
     scrollbar-width: none;
     /* 파이어폭스 */
-    padding: 20px 20px 20px 0;
+    padding: 0 20px 20px 0;
 }
 
 .tabs::-webkit-scrollbar {
@@ -307,6 +315,7 @@ ul.tabs li {
     box-shadow: 2px 4px 12px rgb(0 0 0 / 12%);
     border-radius: 20px;
     margin: 0 6px;
+    font-size: 14px;
 }
 ul.tabs li:first-child{
     margin-left: 0;
@@ -324,18 +333,20 @@ ul.tabs li.current {
     display: block;
 }
 
-footer {}
-
 .card {
     width: 100%;
     height: 100%;
 }
 
-.card .swiper-slide {
+.swiper-slide{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 320px !important;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.swiper-slide.card {
+    width: 320px;
     height: 280px;
 }
 
@@ -345,4 +356,89 @@ footer {}
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+}
+.card_text{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px);
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tit_Wrap{
+    padding: 20px;
+}
+.tit_Wrap > p{
+    color: #fff;
+    font-size: 0.95em;
+    padding: 2px 0;
+    font-weight: 100;
+}
+.tit_Wrap > p:nth-child(1){
+    font-size: 1.25em;
+    font-weight: 400;
+}
+.card_btn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 14px;
+    background: none;
+}
+.service{
+    padding-top: 40px;
+}
+.service_wrappay > div{
+    margin-bottom: 24px;
+}
+.tit_Wrap.service_text > p:first-child{
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 4px 0;
+    margin-bottom: 8px;
+}
+.tit_Wrap.service_text > p{
+    line-height: 18px;
+    font-size: 0.95em;
+    font-weight: 300;
+    letter-spacing: -0.25px;
+}
+.swiper-slide.service_item{
+    width: 320px;
+    height: 180px;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+.service .card_btn{
+    width: 24px;
+    height: 24px;
+    margin-right: 0;
+    margin-top: 8px;
+}
+.swiper-slide.service_item.last,.swiper-slide.card.last{
+    width: 20px;
+}
+
+.swiper-slide.service_item:nth-child(1){
+    background: url(../imges/card_bg_01.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.swiper-slide.service_item:nth-child(2){
+    background: url(../imges/card_bg_02.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+.swiper-slide.service_item:nth-child(3){
+    background: url(../imges/card_bg_03.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
