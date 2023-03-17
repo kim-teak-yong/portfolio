@@ -4,12 +4,12 @@ html{
 }
 body {
     overflow-x: hidden;
-    touch-action: none;
     font-family: 'Noto Sans KR', sans-serif;
     word-break: keep-all;
-    height: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+    -ms-overflow-style:none; 
 }
-.body::-webkit-scrollbar {
+body::-webkit-scrollbar {
     display: none;
 }
 h1~h6,p,span{
@@ -314,7 +314,7 @@ ul.tabs li {
     cursor: pointer;
     box-shadow: 2px 4px 12px rgb(0 0 0 / 12%);
     border-radius: 20px;
-    margin: 0 6px;
+    margin: 0 4px;
     font-size: 14px;
 }
 ul.tabs li:first-child{
