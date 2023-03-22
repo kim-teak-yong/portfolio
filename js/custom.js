@@ -53,7 +53,7 @@ function isMobile(){
 }
 
 if(isMobile()){
-	location.href = "https://kim-teak-yong.github.io/portfolio/mobile/index.html";	//모바일페이지
+	location.href = "/mobile/index.html";	//모바일페이지
 }else{
-	location.href = "https://kim-teak-yong.github.io/portfolio/index.html";	//PC페이지
+	location.href = "index.html";	//PC페이지
 }
