@@ -53,10 +53,12 @@ img {
 }
 
 .inner {
-    width: 100%;
     max-width: 750px;
     margin: 0 auto;
     padding: 0 20px;
+}
+.card_inner{
+    width: 100%;
 }
 
 #wrap {
@@ -72,6 +74,7 @@ img {
 }
 
 .headerInner {
+    position: relative;
     max-width: 750px;
     height: 60px;
     background-color: #222;
@@ -176,7 +179,7 @@ img {
     display: flex;
     align-items: center;
     position: absolute;
-    right: 40px;
+    right: 0px;
     transition: 0.5s;
 }
 
@@ -243,7 +246,7 @@ main {
     width: 100%;
     position: absolute;
     left: 20px;
-    bottom: 18%;
+    bottom: 14%;
     display: flex;
     justify-content: space-between;
 }
@@ -536,6 +539,7 @@ ul.tabs li.current {
 
 .footer_bottom {
     background: #2C2C2C;
+    margin-top: -1px;
 }
 
 .caution {
