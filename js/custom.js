@@ -42,11 +42,18 @@ $(function () {
 //     }
 // });
 
-var UserAgent = navigator.userAgent;
+function isMobile(){
+	var UserAgent = navigator.userAgent;
 
-if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null) {
-    location.href = "/mobile/index.html";
+	if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null){
+		return true;
+	}else{
+		return false;
+	}
 }
-else {
 
+if(isMobile()){
+	location.href = "https://github.com/kim-teak-yong/portfolio/blob/main/mobile/index.html";	//모바일페이지
+}else{
+	location.href = "https://github.com/kim-teak-yong/portfolio/blob/main/index.html";	//PC페이지
 }
