@@ -39,7 +39,6 @@
             </div>
             <nav class="toggle_menu inner">
                 <div class="car_menu">
-                    <ul>
                         <li class="Depth1">
                             <a href="#">718<i class="material-icons icon">expand_more</i></a>
                             <ul class="Depth2">
@@ -48,8 +47,6 @@
                                 <li><a href="">718 Carman GT4</a></li>
                             </ul>
                         </li>
-                    </ul>
-                    <ul>
                         <li class="Depth1">
                             <a href="#">911<i class="material-icons icon">expand_more</i></a>
                             <ul class="Depth2">
@@ -60,8 +57,6 @@
                                 <li><a href="">911 GTS</a></li>
                             </ul>
                         </li>
-                    </ul>
-                    <ul>
                         <li class="Depth1">
                             <a href="#">Taycan<i class="material-icons icon">expand_more</i></a>
                             <ul class="Depth2">
@@ -69,8 +64,6 @@
                                 <li><a href="">CrossTurismo</a></li>
                             </ul>
                         </li>
-                    </ul>
-                    <ul>
                         <li class="Depth1">
                             <a href="#">Panamera<i class="material-icons icon">expand_more</i></a>
                             <ul class="Depth2">
@@ -78,16 +71,12 @@
                                 <li><a href="">Executive 모델</a></li>
                             </ul>
                         </li>
-                    </ul>
-                    <ul>
                         <li class="Depth1">
                             <a href="#">Macan<i class="material-icons icon">expand_more</i></a>
                             <ul class="Depth2">
                                 <li><a href="">Macan 모델</a></li>
                             </ul>
                         </li>
-                    </ul>
-                    <ul>
                         <li class="Depth1">
                             <a href="#">Cayenne<i class="material-icons icon">expand_more</i></a>
                             <ul class="Depth2">
@@ -95,8 +84,6 @@
                                 <li><a href="">Coupe 모델</a></li>
                             </ul>
                         </li>
-                    </ul>
-                    <ul>
                         <li class="Depth1">
                             <a href="#">서비스<i class="material-icons icon">expand_more</i></a>
                             <ul class="Depth2">
@@ -110,8 +97,6 @@
                                 <li><a href="">포르쉐 인증 중고차 및 연장 보증</a></li>
                             </ul>
                         </li>
-                    </ul>
-                    <ul>
                         <li class="Depth1">
                             <a href="#">익스피리언스<i class="material-icons icon">expand_more</i></a>
                             <ul class="Depth2">
@@ -124,8 +109,6 @@
                                 <li><a href="">포르쉐 박물관</a></li>
                             </ul>
                         </li>
-                    </ul>
-                    <ul>
                         <li class="Depth1">
                             <a href="#">포르쉐에 관하여<i class="material-icons icon">expand_more</i></a>
                             <ul class="Depth2">
@@ -139,7 +122,6 @@
                                 <li><a href="">문의하기</a></li>
                             </ul>
                         </li>
-                    </ul>
                 </div>
             </nav>
         </header>
@@ -436,253 +418,256 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
-
-        $(".Depth1").on('click', function () {
-            $(this).find(".icon").toggleClass("on");
-            $(this).find(".Depth2").slideToggle('on'); // li 에서 Dpeth2 찾아 toggle 클래스
-        });
-
-        $(".ft_Depth1").on('click', function () {
-            $(this).find(".icon").toggleClass("on");
-            $(this).find(".ft_Depth2").slideToggle('on'); // li 에서 Dpeth2 찾아 toggle 클래스
-        });
-
-        $(".move_btn").on('click', function () {
-            $(this).toggleClass("on");
-            $('.toggle_menu').toggleClass("on");
-            $('body').toggleClass("on");
-        });
-
-        $(document).ready(function () {
-            $('ul.tabs li').click(function () {
-                var tab_id = $(this).attr('data-tab');
-
-                $('ul.tabs li').removeClass('current');
-                $('.tab-content').removeClass('current');
-
-                $(this).addClass('current');
-                $("#" + tab_id).addClass('current');
+            $(".Depth1").click (function (){
+                if($(this).hasClass("on") == true ){
+                    $(this).removeClass("on");
+                } else{
+                    $('.Depth1').removeClass("on");
+                    $(this).addClass("on");
+                };
             });
 
-        });
+            $(".ft_Depth1").on('click', function () {
+                $(this).find(".icon").toggleClass("on");
+                $(this).find(".ft_Depth2").slideToggle('on'); // li 에서 Dpeth2 찾아 toggle 클래스
+            });
+
+            $(".move_btn").on('click', function () {
+                $(this).toggleClass("on");
+                $('.toggle_menu').toggleClass("on");
+                $('body').toggleClass("on");
+            });
+
+            $(document).ready(function () {
+                $('ul.tabs li').click(function () {
+                    var tab_id = $(this).attr('data-tab');
+
+                    $('ul.tabs li').removeClass('current');
+                    $('.tab-content').removeClass('current');
+
+                    $(this).addClass('current');
+                    $("#" + tab_id).addClass('current');
+                });
+
+            });
 
     </script>
     <script>
-        var swiper = new Swiper(".mySwiper", {
-            speed: 1000,
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination"
-            },
-        });
+    var swiper = new Swiper(".mySwiper", {
+        speed: 1000,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination"
+        },
+    });
     </script>
     <script>
-        var interleaveOffset = 1;
+    var interleaveOffset = 1;
 
-        var interleaveEffect = {
+    var interleaveEffect = {
 
-            onProgress: function (swiper, progress) {
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    var slide = swiper.slides[i];
-                    var translate, innerTranslate;
-                    progress = slide.progress;
+        onProgress: function (swiper, progress) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                var slide = swiper.slides[i];
+                var translate, innerTranslate;
+                progress = slide.progress;
 
-                    if (progress > 0) {
-                        translate = progress * swiper.width;
-                        innerTranslate = translate * interleaveOffset;
-                    }
-                    else {
-                        innerTranslate = Math.abs(progress * swiper.width) * interleaveOffset;
-                        translate = 0;
-                    }
-
-                    $(slide).css({
-                        transform: 'translate3d(' + translate + 'px,0,0)'
-                    });
-
-                    $(slide).find('.swiper-slide.card').css({
-                        transform: 'translate3d(' + innerTranslate + 'px,0,0)'
-                    });
+                if (progress > 0) {
+                    translate = progress * swiper.width;
+                    innerTranslate = translate * interleaveOffset;
                 }
-            },
-
-            onTouchStart: function (swiper) {
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    $(swiper.slides[i]).css({ transition: '' });
+                else {
+                    innerTranslate = Math.abs(progress * swiper.width) * interleaveOffset;
+                    translate = 0;
                 }
-            },
 
-            onSetTransition: function (swiper, speed) {
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    $(swiper.slides[i])
-                        .find('.swiper-slide.card')
-                        .andSelf()
-                        .css({ transition: speed + 'ms' });
-                }
+                $(slide).css({
+                    transform: 'translate3d(' + translate + 'px,0,0)'
+                });
+
+                $(slide).find('.swiper-slide.card').css({
+                    transform: 'translate3d(' + innerTranslate + 'px,0,0)'
+                });
             }
-        };
+        },
 
-        var swiperOptions = {
-            slidesPerView: 'auto',
-            spaceBetween: 10,
-            centeredSlides: false,
-            loop: false,
-            speed: 1000,
-            watchSlidesProgress: true,
-            mousewheelControl: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        };
-
-        swiperOptions = $.extend(swiperOptions, interleaveEffect);
-
-        var swiper = new Swiper('.swiper.card', swiperOptions);
-    </script>
-    <script>
-        var interleaveOffset = 1;
-
-        var interleaveEffect = {
-
-            onProgress: function (swiper, progress) {
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    var slide = swiper.slides[i];
-                    var translate, innerTranslate;
-                    progress = slide.progress;
-
-                    if (progress > 0) {
-                        translate = progress * swiper.width;
-                        innerTranslate = translate * interleaveOffset;
-                    }
-                    else {
-                        innerTranslate = Math.abs(progress * swiper.width) * interleaveOffset;
-                        translate = 0;
-                    }
-
-                    $(slide).css({
-                        transform: 'translate3d(' + translate + 'px,0,0)'
-                    });
-
-                    $(slide).find('.swiper-slide.service_item').css({
-                        transform: 'translate3d(' + innerTranslate + 'px,0,0)'
-                    });
-                }
-            },
-
-            onTouchStart: function (swiper) {
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    $(swiper.slides[i]).css({ transition: '' });
-                }
-            },
-
-            onSetTransition: function (swiper, speed) {
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    $(swiper.slides[i])
-                        .find('.swiper-slide.service_item')
-                        .andSelf()
-                        .css({ transition: speed + 'ms' });
-                }
+        onTouchStart: function (swiper) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                $(swiper.slides[i]).css({ transition: '' });
             }
-        };
+        },
 
-        var swiperOptions = {
-            slidesPerView: 'auto',
-            spaceBetween: 10,
-            centeredSlides: false,
-            loop: false,
-            speed: 1000,
-            watchSlidesProgress: true,
-            mousewheelControl: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        };
-
-        swiperOptions = $.extend(swiperOptions, interleaveEffect);
-
-        var swiper = new Swiper('.serviceslide', swiperOptions);
-    </script>
-    <script>
-        var interleaveOffset = 1;
-
-        var interleaveEffect = {
-
-            onProgress: function (swiper, progress) {
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    var slide = swiper.slides[i];
-                    var translate, innerTranslate;
-                    progress = slide.progress;
-
-                    if (progress > 0) {
-                        translate = progress * swiper.width;
-                        innerTranslate = translate * interleaveOffset;
-                    }
-                    else {
-                        innerTranslate = Math.abs(progress * swiper.width) * interleaveOffset;
-                        translate = 0;
-                    }
-
-                    $(slide).css({
-                        transform: 'translate3d(' + translate + 'px,0,0)'
-                    });
-
-                    $(slide).find('.swiper-slide.lifewrap').css({
-                        transform: 'translate3d(' + innerTranslate + 'px,0,0)'
-                    });
-                }
-            },
-
-            onTouchStart: function (swiper) {
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    $(swiper.slides[i]).css({ transition: '' });
-                }
-            },
-
-            onSetTransition: function (swiper, speed) {
-                for (var i = 0; i < swiper.slides.length; i++) {
-                    $(swiper.slides[i])
-                        .find('.swiper-slide.lifewrap')
-                        .andSelf()
-                        .css({ transition: speed + 'ms' });
-                }
+        onSetTransition: function (swiper, speed) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                $(swiper.slides[i])
+                    .find('.swiper-slide.card')
+                    .andSelf()
+                    .css({ transition: speed + 'ms' });
             }
-        };
+        }
+    };
 
-        var swiperOptions = {
-            slidesPerView: "auto",
-            spaceBetween: 10,
-            centeredSlides: false,
-            loop: false,
-            speed: 1000,
-            watchSlidesProgress: true,
-            mousewheelControl: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        };
+    var swiperOptions = {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        centeredSlides: false,
+        loop: false,
+        speed: 1000,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    };
 
-        swiperOptions = $.extend(swiperOptions, interleaveEffect);
+    swiperOptions = $.extend(swiperOptions, interleaveEffect);
 
-        var swiper = new Swiper('.swiper.life_slide', swiperOptions);
+    var swiper = new Swiper('.swiper.card', swiperOptions);
+    </script>
+    <script>
+    var interleaveOffset = 1;
+
+    var interleaveEffect = {
+
+        onProgress: function (swiper, progress) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                var slide = swiper.slides[i];
+                var translate, innerTranslate;
+                progress = slide.progress;
+
+                if (progress > 0) {
+                    translate = progress * swiper.width;
+                    innerTranslate = translate * interleaveOffset;
+                }
+                else {
+                    innerTranslate = Math.abs(progress * swiper.width) * interleaveOffset;
+                    translate = 0;
+                }
+
+                $(slide).css({
+                    transform: 'translate3d(' + translate + 'px,0,0)'
+                });
+
+                $(slide).find('.swiper-slide.service_item').css({
+                    transform: 'translate3d(' + innerTranslate + 'px,0,0)'
+                });
+            }
+        },
+
+        onTouchStart: function (swiper) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                $(swiper.slides[i]).css({ transition: '' });
+            }
+        },
+
+        onSetTransition: function (swiper, speed) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                $(swiper.slides[i])
+                    .find('.swiper-slide.service_item')
+                    .andSelf()
+                    .css({ transition: speed + 'ms' });
+            }
+        }
+    };
+
+    var swiperOptions = {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        centeredSlides: false,
+        loop: false,
+        speed: 1000,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    };
+
+    swiperOptions = $.extend(swiperOptions, interleaveEffect);
+
+    var swiper = new Swiper('.serviceslide', swiperOptions);
+    </script>
+    <script>
+    var interleaveOffset = 1;
+
+    var interleaveEffect = {
+
+        onProgress: function (swiper, progress) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                var slide = swiper.slides[i];
+                var translate, innerTranslate;
+                progress = slide.progress;
+
+                if (progress > 0) {
+                    translate = progress * swiper.width;
+                    innerTranslate = translate * interleaveOffset;
+                }
+                else {
+                    innerTranslate = Math.abs(progress * swiper.width) * interleaveOffset;
+                    translate = 0;
+                }
+
+                $(slide).css({
+                    transform: 'translate3d(' + translate + 'px,0,0)'
+                });
+
+                $(slide).find('.swiper-slide.lifewrap').css({
+                    transform: 'translate3d(' + innerTranslate + 'px,0,0)'
+                });
+            }
+        },
+
+        onTouchStart: function (swiper) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                $(swiper.slides[i]).css({ transition: '' });
+            }
+        },
+
+        onSetTransition: function (swiper, speed) {
+            for (var i = 0; i < swiper.slides.length; i++) {
+                $(swiper.slides[i])
+                    .find('.swiper-slide.lifewrap')
+                    .andSelf()
+                    .css({ transition: speed + 'ms' });
+            }
+        }
+    };
+
+    var swiperOptions = {
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        centeredSlides: false,
+        loop: false,
+        speed: 1000,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    };
+
+    swiperOptions = $.extend(swiperOptions, interleaveEffect);
+
+    var swiper = new Swiper('.swiper.life_slide', swiperOptions);
     </script>
     <script>
     </script>
     <script>
-        //아이폰 세로 값 vh 변환코드
+    //아이폰 세로 값 vh 변환코드
+    let vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+    window.addEventListener('resize', () => {
         let vh = window.innerHeight * 0.01
         document.documentElement.style.setProperty('--vh', `${vh}px`)
-        window.addEventListener('resize', () => {
-            let vh = window.innerHeight * 0.01
-            document.documentElement.style.setProperty('--vh', `${vh}px`)
-        });
+    });
     </script>
     <script>
-        $(document).ready(function () {
-            $('select').niceSelect();
-        });
+            $(document).ready(function () {
+                $('select').niceSelect();
+            });
     </script>
 </body>
 
