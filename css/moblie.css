@@ -16,7 +16,6 @@ body {
     -webkit-transform: translateZ(0);
     -webkit-overflow-scrolling: touch;
 }
-
 body::-webkit-scrollbar {
     display: none;
 }
@@ -196,7 +195,9 @@ img {
 .Depth1.on .icon {
     transform: rotate(180deg);
 }
-
+.icon.on{
+    transform: rotate(180deg);
+}
 .toggle_menu {
     transform: translateX(100%);
     background-color: #222;
@@ -231,6 +232,7 @@ img {
 }
 .Depth1{
     padding: 14px 0;
+    transition: 0.5s;
 }
 .Depth1>a {
     display: flex;
